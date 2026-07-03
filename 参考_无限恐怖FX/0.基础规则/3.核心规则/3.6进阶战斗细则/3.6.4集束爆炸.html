@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>集束爆炸</title>
+	<style>
+    #box{
+        width: 600px;
+        margin: 10;
+        text-align: left;
+		border-width:2px;
+		border-color:black;
+		border-style:solid;
+	    font-size: 14px;
+    }
+</style>
+<script>
+function isHidden(oDiv){
+	var vDiv = document.getElementById(oDiv);
+	vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+}
+</script>
+</head>
+
+<body>
+	<span style="font-size: 16pt" class="bbc_size">
+	<span style="color: black" class="bbc_color">集束爆炸</span></span>
+<br>集束爆炸是当多个范围伤害同时作用于同一个单位时的结算方案。需要注意的是，集束爆炸规则仅对范围伤害有效（例如手榴弹。它们的描述一般为“造成X点伤害，反射豁免”）。典型的使用例子包括：
+<br>-将几颗手雷捆绑在一起制成集束炸弹，然后一起引爆。
+<br>-在一个巨人身上每隔10米就留下一个小炸弹（爆炸半径为3米），然后同时引爆。
+<br>-需要注意，以短点射、长点射之类的方式，仅在<B>一次攻击</B>中发射多枚炮弹造成的炮击伤害重合，不会应用集束爆炸规则；但是如果在<B>多次攻击</B>中的炮击伤害重合，ST可以选择应用集束爆炸规则（但通常来说没有必要）。
+<br>-其他说明了应当应用集束爆炸规则的资源。
+<br>
+<br>集束爆炸的计算：
+<br>当人物处于多个爆炸范围内的重叠区域中时，首先照常判断每次爆炸的命中；
+<br>接着，以<B>已命中人物</B>的爆炸中，以伤害最高的爆炸物为伤害计算的基准；其他<B>已命中人物</B>的每个爆炸物投1d10的集束判定骰（显然，这是一个自然骰），当结果为10时，可以将爆炸伤害的1/3加入这次伤害中。
+<br>
+<br>例：炸弹支配者鸦同时引爆了六个妖气炸弹，其中三个妖气炸弹的伤害值为6，另外三个的伤害值为9；玩家彩海站在它们的爆炸范围重叠的部分，其反射豁免结果为8，六个妖力炸弹中有三个伤害值为9的炸弹命中了，因此进入集束爆炸的结算流程。
+<br>-首先，以最高值（9）为伤害基准。
+<br>-接着，鸦投2d10，结果为2、10；鸦因此可以将一个炸弹伤害的1/3加入这次伤害中（即增加3点）
+<br>-剩下的三个伤害值为6的炸弹未命中，因此不进行结算。
+<br>-在减去豁免后，彩海承受的实际伤害为9+3-8=4L。
+<br>	
+<br>特殊的，如果炸弹数量太多，ST可以判断无需为每个炸弹投掷D10，而是直接取期望值（也即是直接增加所有炸弹伤害之和的3/10）
+</div>

@@ -1,0 +1,14 @@
+# 数据处理
+pandas
+openpyxl
+
+# 数据库
+sqlalchemy
+pyodbc
+
+# 网络请求
+requests
+
+# 工具
+python-dotenv
+loguru

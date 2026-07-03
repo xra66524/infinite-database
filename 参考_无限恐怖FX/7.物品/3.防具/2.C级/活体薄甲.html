@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>活体薄甲</title>
+	<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #222222;
+    }
+    #box{
+        width: 600px;
+        margin: 0;
+        text-align: left;
+    }
+    #content{
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px #ccc;
+        border:1px solid #EEEEEE;
+    }
+    #btn{
+        width: 80px;
+    }
+    #spread{
+        height: 0px;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+<br>活体薄甲 特异本质（不可制造）
+<br>C+1000
+<br>与其说是盔甲，不如说是生命。本质上是深远森林中的史莱姆凝聚而成，用于【数据删除】和【数据删除】，防御能力实际上只是顺带提供的。因为具有理论上的独立思考能力，所以可以发现穿戴者所没有注意到的攻击。仔细观察，可以发现这玩意在轻微的蠕动。
+<br>这件轻甲可提供6/6的偏斜防御，使穿戴者获得C级免疫措手不及。
+<br>由于其保护穿戴者以繁殖后代的本能，在受到精神伤害之外的伤害时，它会主动为被攻击者抵消伤害。每次可抵消2点，总共可抵消9点。每次回到主神空间后重置。另外，从表现上来说，抵消点数用光后其将会停止蠕动（因为被打瘪了），直到在主神空间恢复为止，这并不会带来实际上的防御减值。
+<br>穿戴这件盔甲时，你会恒定获得1点不可豁免回复的亢奋点数。
+<br>
+<br>
+<div id="box">
+    <div id="content">
+        <p><i>里版描述</i></p>
+        <div id="spread">
+    与其说是盔甲，不如说是生命。本质上是深远森林中的史莱姆凝聚而成，用于吸引路过的冒险者穿戴，从而繁衍后代，延续种群。为了阻止穿戴者将其褪下，它会牢牢吸附住穿戴者，并分泌大量迷情剂，加上自身的蠕动，使穿戴者沉迷于快感之中。防御能力只是顺带提供的。因为具有理论上的独立思考能力，所以可以发现穿戴者没有注意到的攻击，并通过官能刺激的方式提醒穿戴者。仔细观察，可以发现这玩意在轻微的蠕动。
+        </div>
+    </div>
+    <button id="btn">展开</button>
+<script>
+    /*获得btn*/
+    var btn = document.getElementById('btn')
+    var spread = document.getElementById('spread')
+    var iSpread = false
+    /*高度*/
+    var height = document.getElementById('spread').scrollHeight
+    /*总时间*/
+    var time = 220;
+    /*间隔*/
+    var interval = 8.4
+    /*速度*/
+    var speed = height/(time/interval)
+    /*点击事件*/
+    btn.onclick = function (e) {
+        btn.disabled = 'disabled'
+        if(!iSpread){
+            var speeds = 0
+            var timer = setInterval(function () {
+                speeds = speeds + speed
+                spread.style.height = speeds + 'px'
+                if(parseInt(spread.style.height) >=height){
+                    clearTimeout(timer)
+                    btn.disabled = ''
+                }
+            },interval)
+            this.innerHTML = '收起'
+        }
+		else {
+            var speeds = height
+            var timer = setInterval(function () {
+                if((speeds - speed)<= 0)
+					{speeds = 0
+					}
+				else
+				{speeds = speeds - speed
+				}
+                spread.style.height = speeds + 'px'
+                if(speeds <= 0){
+                    clearTimeout(timer)
+                    btn.disabled = ''
+                }
+            },interval)
+        this.innerHTML = '展开'
+        }
+        iSpread = !iSpread
+    }
+</script>
+</body>
+	</html>
