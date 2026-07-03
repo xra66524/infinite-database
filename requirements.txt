@@ -12,3 +12,7 @@ requests
 # 工具
 python-dotenv
 loguru
+
+# HTML 解析 (规则提取)
+beautifulsoup4
+lxml
